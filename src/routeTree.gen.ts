@@ -10,33 +10,320 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ShellRouteImport } from './routes/_shell'
+import { Route as ScannerRouteImport } from './routes/scanner'
+import { Route as ShellAnalyticsRouteImport } from './routes/_shell.analytics'
+import { Route as ShellAuditRouteImport } from './routes/_shell.audit'
+import { Route as ShellDashboardRouteImport } from './routes/_shell.dashboard'
+import { Route as ShellFilingRouteImport } from './routes/_shell.filing'
+import { Route as ShellIncomingRouteImport } from './routes/_shell.incoming'
+import { Route as ShellNotificationsRouteImport } from './routes/_shell.notifications'
+import { Route as ShellOfficeRouteImport } from './routes/_shell.office'
+import { Route as ShellOfficesRouteImport } from './routes/_shell.offices'
+import { Route as ShellReferencesRouteImport } from './routes/_shell.references'
+import { Route as ShellReportsRouteImport } from './routes/_shell.reports'
+import { Route as ShellSettingsRouteImport } from './routes/_shell.settings'
+import { Route as ShellTrackRouteImport } from './routes/_shell.track'
+import { Route as ShellUsersRouteImport } from './routes/_shell.users'
+import { Route as ScannerIndexRouteImport } from './routes/scanner.index'
+import { Route as ScannerDispatchRouteImport } from './routes/scanner.dispatch'
+import { Route as ScannerQueueRouteImport } from './routes/scanner.queue'
+import { Route as ScannerReceiveRouteImport } from './routes/scanner.receive'
+import { Route as ShellDocumentsIndexRouteImport } from './routes/_shell.documents.index'
+import { Route as ShellDocumentsDocIdRouteImport } from './routes/_shell.documents.$docId'
+import { Route as ShellDocumentsNewRouteImport } from './routes/_shell.documents.new'
+import { Route as ShellWorkflowsIndexRouteImport } from './routes/_shell.workflows.index'
+import { Route as ShellWorkflowsBuilderRouteImport } from './routes/_shell.workflows.builder'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShellRoute = ShellRouteImport.update({
+  id: '/_shell',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScannerRoute = ScannerRouteImport.update({
+  id: '/scanner',
+  path: '/scanner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShellAnalyticsRoute = ShellAnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellAuditRoute = ShellAuditRouteImport.update({
+  id: '/audit',
+  path: '/audit',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellDashboardRoute = ShellDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellFilingRoute = ShellFilingRouteImport.update({
+  id: '/filing',
+  path: '/filing',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellIncomingRoute = ShellIncomingRouteImport.update({
+  id: '/incoming',
+  path: '/incoming',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellNotificationsRoute = ShellNotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellOfficeRoute = ShellOfficeRouteImport.update({
+  id: '/office',
+  path: '/office',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellOfficesRoute = ShellOfficesRouteImport.update({
+  id: '/offices',
+  path: '/offices',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellReferencesRoute = ShellReferencesRouteImport.update({
+  id: '/references',
+  path: '/references',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellReportsRoute = ShellReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellSettingsRoute = ShellSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellTrackRoute = ShellTrackRouteImport.update({
+  id: '/track',
+  path: '/track',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellUsersRoute = ShellUsersRouteImport.update({
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ScannerIndexRoute = ScannerIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ScannerRoute,
+} as any)
+const ScannerDispatchRoute = ScannerDispatchRouteImport.update({
+  id: '/dispatch',
+  path: '/dispatch',
+  getParentRoute: () => ScannerRoute,
+} as any)
+const ScannerQueueRoute = ScannerQueueRouteImport.update({
+  id: '/queue',
+  path: '/queue',
+  getParentRoute: () => ScannerRoute,
+} as any)
+const ScannerReceiveRoute = ScannerReceiveRouteImport.update({
+  id: '/receive',
+  path: '/receive',
+  getParentRoute: () => ScannerRoute,
+} as any)
+const ShellDocumentsIndexRoute = ShellDocumentsIndexRouteImport.update({
+  id: '/documents/',
+  path: '/documents/',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellDocumentsDocIdRoute = ShellDocumentsDocIdRouteImport.update({
+  id: '/documents/$docId',
+  path: '/documents/$docId',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellDocumentsNewRoute = ShellDocumentsNewRouteImport.update({
+  id: '/documents/new',
+  path: '/documents/new',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellWorkflowsIndexRoute = ShellWorkflowsIndexRouteImport.update({
+  id: '/workflows/',
+  path: '/workflows/',
+  getParentRoute: () => ShellRoute,
+} as any)
+const ShellWorkflowsBuilderRoute = ShellWorkflowsBuilderRouteImport.update({
+  id: '/workflows/builder',
+  path: '/workflows/builder',
+  getParentRoute: () => ShellRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/scanner': typeof ScannerRouteWithChildren
+  '/analytics': typeof ShellAnalyticsRoute
+  '/audit': typeof ShellAuditRoute
+  '/dashboard': typeof ShellDashboardRoute
+  '/filing': typeof ShellFilingRoute
+  '/incoming': typeof ShellIncomingRoute
+  '/notifications': typeof ShellNotificationsRoute
+  '/office': typeof ShellOfficeRoute
+  '/offices': typeof ShellOfficesRoute
+  '/references': typeof ShellReferencesRoute
+  '/reports': typeof ShellReportsRoute
+  '/settings': typeof ShellSettingsRoute
+  '/track': typeof ShellTrackRoute
+  '/users': typeof ShellUsersRoute
+  '/scanner/dispatch': typeof ScannerDispatchRoute
+  '/scanner/queue': typeof ScannerQueueRoute
+  '/scanner/receive': typeof ScannerReceiveRoute
+  '/scanner/': typeof ScannerIndexRoute
+  '/documents/$docId': typeof ShellDocumentsDocIdRoute
+  '/documents/new': typeof ShellDocumentsNewRoute
+  '/workflows/builder': typeof ShellWorkflowsBuilderRoute
+  '/documents/': typeof ShellDocumentsIndexRoute
+  '/workflows/': typeof ShellWorkflowsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/analytics': typeof ShellAnalyticsRoute
+  '/audit': typeof ShellAuditRoute
+  '/dashboard': typeof ShellDashboardRoute
+  '/filing': typeof ShellFilingRoute
+  '/incoming': typeof ShellIncomingRoute
+  '/notifications': typeof ShellNotificationsRoute
+  '/office': typeof ShellOfficeRoute
+  '/offices': typeof ShellOfficesRoute
+  '/references': typeof ShellReferencesRoute
+  '/reports': typeof ShellReportsRoute
+  '/settings': typeof ShellSettingsRoute
+  '/track': typeof ShellTrackRoute
+  '/users': typeof ShellUsersRoute
+  '/scanner/dispatch': typeof ScannerDispatchRoute
+  '/scanner/queue': typeof ScannerQueueRoute
+  '/scanner/receive': typeof ScannerReceiveRoute
+  '/scanner': typeof ScannerIndexRoute
+  '/documents/$docId': typeof ShellDocumentsDocIdRoute
+  '/documents/new': typeof ShellDocumentsNewRoute
+  '/workflows/builder': typeof ShellWorkflowsBuilderRoute
+  '/documents': typeof ShellDocumentsIndexRoute
+  '/workflows': typeof ShellWorkflowsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_shell': typeof ShellRouteWithChildren
+  '/scanner': typeof ScannerRouteWithChildren
+  '/_shell/analytics': typeof ShellAnalyticsRoute
+  '/_shell/audit': typeof ShellAuditRoute
+  '/_shell/dashboard': typeof ShellDashboardRoute
+  '/_shell/filing': typeof ShellFilingRoute
+  '/_shell/incoming': typeof ShellIncomingRoute
+  '/_shell/notifications': typeof ShellNotificationsRoute
+  '/_shell/office': typeof ShellOfficeRoute
+  '/_shell/offices': typeof ShellOfficesRoute
+  '/_shell/references': typeof ShellReferencesRoute
+  '/_shell/reports': typeof ShellReportsRoute
+  '/_shell/settings': typeof ShellSettingsRoute
+  '/_shell/track': typeof ShellTrackRoute
+  '/_shell/users': typeof ShellUsersRoute
+  '/scanner/dispatch': typeof ScannerDispatchRoute
+  '/scanner/queue': typeof ScannerQueueRoute
+  '/scanner/receive': typeof ScannerReceiveRoute
+  '/scanner/': typeof ScannerIndexRoute
+  '/_shell/documents/$docId': typeof ShellDocumentsDocIdRoute
+  '/_shell/documents/new': typeof ShellDocumentsNewRoute
+  '/_shell/workflows/builder': typeof ShellWorkflowsBuilderRoute
+  '/_shell/documents/': typeof ShellDocumentsIndexRoute
+  '/_shell/workflows/': typeof ShellWorkflowsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/scanner'
+    | '/analytics'
+    | '/audit'
+    | '/dashboard'
+    | '/filing'
+    | '/incoming'
+    | '/notifications'
+    | '/office'
+    | '/offices'
+    | '/references'
+    | '/reports'
+    | '/settings'
+    | '/track'
+    | '/users'
+    | '/scanner/dispatch'
+    | '/scanner/queue'
+    | '/scanner/receive'
+    | '/scanner/'
+    | '/documents/$docId'
+    | '/documents/new'
+    | '/workflows/builder'
+    | '/documents/'
+    | '/workflows/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/analytics'
+    | '/audit'
+    | '/dashboard'
+    | '/filing'
+    | '/incoming'
+    | '/notifications'
+    | '/office'
+    | '/offices'
+    | '/references'
+    | '/reports'
+    | '/settings'
+    | '/track'
+    | '/users'
+    | '/scanner/dispatch'
+    | '/scanner/queue'
+    | '/scanner/receive'
+    | '/scanner'
+    | '/documents/$docId'
+    | '/documents/new'
+    | '/workflows/builder'
+    | '/documents'
+    | '/workflows'
+  id:
+    | '__root__'
+    | '/'
+    | '/_shell'
+    | '/scanner'
+    | '/_shell/analytics'
+    | '/_shell/audit'
+    | '/_shell/dashboard'
+    | '/_shell/filing'
+    | '/_shell/incoming'
+    | '/_shell/notifications'
+    | '/_shell/office'
+    | '/_shell/offices'
+    | '/_shell/references'
+    | '/_shell/reports'
+    | '/_shell/settings'
+    | '/_shell/track'
+    | '/_shell/users'
+    | '/scanner/dispatch'
+    | '/scanner/queue'
+    | '/scanner/receive'
+    | '/scanner/'
+    | '/_shell/documents/$docId'
+    | '/_shell/documents/new'
+    | '/_shell/workflows/builder'
+    | '/_shell/documents/'
+    | '/_shell/workflows/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ShellRoute: typeof ShellRouteWithChildren
+  ScannerRoute: typeof ScannerRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +335,242 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_shell': {
+      id: '/_shell'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof ShellRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scanner': {
+      id: '/scanner'
+      path: '/scanner'
+      fullPath: '/scanner'
+      preLoaderRoute: typeof ScannerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_shell/analytics': {
+      id: '/_shell/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof ShellAnalyticsRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/audit': {
+      id: '/_shell/audit'
+      path: '/audit'
+      fullPath: '/audit'
+      preLoaderRoute: typeof ShellAuditRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/dashboard': {
+      id: '/_shell/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof ShellDashboardRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/filing': {
+      id: '/_shell/filing'
+      path: '/filing'
+      fullPath: '/filing'
+      preLoaderRoute: typeof ShellFilingRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/incoming': {
+      id: '/_shell/incoming'
+      path: '/incoming'
+      fullPath: '/incoming'
+      preLoaderRoute: typeof ShellIncomingRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/notifications': {
+      id: '/_shell/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof ShellNotificationsRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/office': {
+      id: '/_shell/office'
+      path: '/office'
+      fullPath: '/office'
+      preLoaderRoute: typeof ShellOfficeRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/offices': {
+      id: '/_shell/offices'
+      path: '/offices'
+      fullPath: '/offices'
+      preLoaderRoute: typeof ShellOfficesRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/references': {
+      id: '/_shell/references'
+      path: '/references'
+      fullPath: '/references'
+      preLoaderRoute: typeof ShellReferencesRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/reports': {
+      id: '/_shell/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ShellReportsRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/settings': {
+      id: '/_shell/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof ShellSettingsRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/track': {
+      id: '/_shell/track'
+      path: '/track'
+      fullPath: '/track'
+      preLoaderRoute: typeof ShellTrackRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/users': {
+      id: '/_shell/users'
+      path: '/users'
+      fullPath: '/users'
+      preLoaderRoute: typeof ShellUsersRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/scanner/': {
+      id: '/scanner/'
+      path: '/'
+      fullPath: '/scanner/'
+      preLoaderRoute: typeof ScannerIndexRouteImport
+      parentRoute: typeof ScannerRoute
+    }
+    '/scanner/dispatch': {
+      id: '/scanner/dispatch'
+      path: '/dispatch'
+      fullPath: '/scanner/dispatch'
+      preLoaderRoute: typeof ScannerDispatchRouteImport
+      parentRoute: typeof ScannerRoute
+    }
+    '/scanner/queue': {
+      id: '/scanner/queue'
+      path: '/queue'
+      fullPath: '/scanner/queue'
+      preLoaderRoute: typeof ScannerQueueRouteImport
+      parentRoute: typeof ScannerRoute
+    }
+    '/scanner/receive': {
+      id: '/scanner/receive'
+      path: '/receive'
+      fullPath: '/scanner/receive'
+      preLoaderRoute: typeof ScannerReceiveRouteImport
+      parentRoute: typeof ScannerRoute
+    }
+    '/_shell/documents/': {
+      id: '/_shell/documents/'
+      path: '/documents'
+      fullPath: '/documents/'
+      preLoaderRoute: typeof ShellDocumentsIndexRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/documents/$docId': {
+      id: '/_shell/documents/$docId'
+      path: '/documents/$docId'
+      fullPath: '/documents/$docId'
+      preLoaderRoute: typeof ShellDocumentsDocIdRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/documents/new': {
+      id: '/_shell/documents/new'
+      path: '/documents/new'
+      fullPath: '/documents/new'
+      preLoaderRoute: typeof ShellDocumentsNewRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/workflows/': {
+      id: '/_shell/workflows/'
+      path: '/workflows'
+      fullPath: '/workflows/'
+      preLoaderRoute: typeof ShellWorkflowsIndexRouteImport
+      parentRoute: typeof ShellRoute
+    }
+    '/_shell/workflows/builder': {
+      id: '/_shell/workflows/builder'
+      path: '/workflows/builder'
+      fullPath: '/workflows/builder'
+      preLoaderRoute: typeof ShellWorkflowsBuilderRouteImport
+      parentRoute: typeof ShellRoute
+    }
   }
 }
 
+interface ShellRouteChildren {
+  ShellAnalyticsRoute: typeof ShellAnalyticsRoute
+  ShellAuditRoute: typeof ShellAuditRoute
+  ShellDashboardRoute: typeof ShellDashboardRoute
+  ShellFilingRoute: typeof ShellFilingRoute
+  ShellIncomingRoute: typeof ShellIncomingRoute
+  ShellNotificationsRoute: typeof ShellNotificationsRoute
+  ShellOfficeRoute: typeof ShellOfficeRoute
+  ShellOfficesRoute: typeof ShellOfficesRoute
+  ShellReferencesRoute: typeof ShellReferencesRoute
+  ShellReportsRoute: typeof ShellReportsRoute
+  ShellSettingsRoute: typeof ShellSettingsRoute
+  ShellTrackRoute: typeof ShellTrackRoute
+  ShellUsersRoute: typeof ShellUsersRoute
+  ShellDocumentsDocIdRoute: typeof ShellDocumentsDocIdRoute
+  ShellDocumentsNewRoute: typeof ShellDocumentsNewRoute
+  ShellWorkflowsBuilderRoute: typeof ShellWorkflowsBuilderRoute
+  ShellDocumentsIndexRoute: typeof ShellDocumentsIndexRoute
+  ShellWorkflowsIndexRoute: typeof ShellWorkflowsIndexRoute
+}
+
+const ShellRouteChildren: ShellRouteChildren = {
+  ShellAnalyticsRoute: ShellAnalyticsRoute,
+  ShellAuditRoute: ShellAuditRoute,
+  ShellDashboardRoute: ShellDashboardRoute,
+  ShellFilingRoute: ShellFilingRoute,
+  ShellIncomingRoute: ShellIncomingRoute,
+  ShellNotificationsRoute: ShellNotificationsRoute,
+  ShellOfficeRoute: ShellOfficeRoute,
+  ShellOfficesRoute: ShellOfficesRoute,
+  ShellReferencesRoute: ShellReferencesRoute,
+  ShellReportsRoute: ShellReportsRoute,
+  ShellSettingsRoute: ShellSettingsRoute,
+  ShellTrackRoute: ShellTrackRoute,
+  ShellUsersRoute: ShellUsersRoute,
+  ShellDocumentsDocIdRoute: ShellDocumentsDocIdRoute,
+  ShellDocumentsNewRoute: ShellDocumentsNewRoute,
+  ShellWorkflowsBuilderRoute: ShellWorkflowsBuilderRoute,
+  ShellDocumentsIndexRoute: ShellDocumentsIndexRoute,
+  ShellWorkflowsIndexRoute: ShellWorkflowsIndexRoute,
+}
+
+const ShellRouteWithChildren = ShellRoute._addFileChildren(ShellRouteChildren)
+
+interface ScannerRouteChildren {
+  ScannerDispatchRoute: typeof ScannerDispatchRoute
+  ScannerQueueRoute: typeof ScannerQueueRoute
+  ScannerReceiveRoute: typeof ScannerReceiveRoute
+  ScannerIndexRoute: typeof ScannerIndexRoute
+}
+
+const ScannerRouteChildren: ScannerRouteChildren = {
+  ScannerDispatchRoute: ScannerDispatchRoute,
+  ScannerQueueRoute: ScannerQueueRoute,
+  ScannerReceiveRoute: ScannerReceiveRoute,
+  ScannerIndexRoute: ScannerIndexRoute,
+}
+
+const ScannerRouteWithChildren =
+  ScannerRoute._addFileChildren(ScannerRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ShellRoute: ShellRouteWithChildren,
+  ScannerRoute: ScannerRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
